@@ -9,7 +9,7 @@ tags:
   - AI
   - LLM
 ogImage: ""
-description: 简单科普 OpenAI Platform，并介绍一些高级工程实践和有价值的开源大模型。
+description: 本文简洁明了地介绍 OpenAI API 的基本使用方法，重点探讨在撰写本文时期，一些颇具前瞻性的高级工程实践，并概述当下开源大语言模型的发展状况。
 ---
 
 # 语言模型的高级工程实践
