@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'LXGWWenKaiMono';
+  src: 
+       url('https://github.com/lxgw/LxgwWenKai/releases/download/v1.250/LXGWWenKaiMono-Regular.ttf') format('truetype');
+}
+
 @layer base {
   :root,
   html[data-theme="light"] {
