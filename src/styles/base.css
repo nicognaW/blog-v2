@@ -3,9 +3,13 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: 'LXGWWenKaiMono';
-  src: 
-       url('https://github.com/lxgw/LxgwWenKai/releases/download/v1.250/LXGWWenKaiMono-Regular.ttf') format('truetype');
+  font-family: "LXGWWenKaiMono";
+  src: url("/assets/fonts/LXGWWenKaiMono-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "TiejiliSC";
+  src: url("/assets/fonts/TiejiliSC-Regular.ttf") format("truetype");
 }
 
 @layer base {

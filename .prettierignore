@@ -11,3 +11,6 @@
 !.prettierrc
 !.eslintrc.js
 !README.md
+
+# Fonts
+public/assets/fonts/*
