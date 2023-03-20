@@ -3,8 +3,8 @@ author: Nico
 pubDatetime: 2023-03-20T00:00:00.000Z
 title: 语言模型应用的高级工程实践
 postSlug: advanced-engineering-practices-of-language-model-applications
-featured: true
-draft: false
+featured: false
+draft: true
 tags:
   - AI
   - LLM
