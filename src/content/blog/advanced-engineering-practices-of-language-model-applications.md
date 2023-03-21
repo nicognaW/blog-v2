@@ -17,8 +17,14 @@ description: 本文简洁明了地介绍 OpenAI API 的基本使用方法，重�
 自 OpenAI 发布 ChatGPT 以来，随着 text-davinci-003、gpt-3.5-turbo 等先进模型的逐步推出，大语言模型在工程应用领域呈现出百花齐放的景象。本文将首先简洁明了地介绍 OpenAI API 的基本使用方法，随后重点探讨在撰写本文时期，一些颇具前瞻性的高级工程实践。此外，还将提供若干实用的参考案例，同时概述当下开源大语言模型的发展状况。
 
 > _本文含有使用大语言模型生成的文本。_
+>
+> 本文最后更新日期：2023 年 3 月 22 日 1 时 40 分
 
 ## OpenAI API 简介
+
+### 大语言模型
+
+Stephen Wolfram 老爷子做过一场[直播](https://www.youtube.com/watch?v=flXrLGPY3SU)来介绍、解释语言模型和大语言模型的知识与上下文，非常值得研究。
 
 ### ChatGPT 与 OpenAI API 的关系
 
@@ -48,7 +54,9 @@ GPT 模型之所以能够令人惊叹地实现这一功能，归功于其庞大�
 
 > 实际上 GPT3 模型早在 2020 年 5 月就发布了，我也曾经体验过一些早期的 GPT3 应用，有一些也是 chat bot 这样的形式，但与 ChatGPT 的效果相差甚远。主要是因为 OpenAI 在 GPT3 模型的基础上，加了[人类反馈的强化学习](https://openai.com/blog/chatgpt#methods)，来微调模型，使其迅速适应对话场景。
 
-Completion API 分为三类：Text Completion、Code Completion 和 Chat Completion。其中，Text Completion 对应较早期的 GPT 模型，也称为 instructGPT，针对指令进行了微调。Code Completion 则对应于 GitHub Copilot 底层使用的 Codex 模型（同样基于 GPT3，但针对程序设计语言进行微调）。最新的 Chat Completion 则对应于 `gpt-3.5-turbo` 模型，即广为人知的 ChatGPT 模型。尽管 OpenAI 将 `text-davinci-003` 划归至 GPT3.5 系列，但 `gpt-3.5-turbo` 的性能与性价比被公认为最佳。如果你想了解各种模型之间的差异、 GPT-4 、 GPT 模型的发布论文或者更多 OpenAI 模型，可以参考 [Models](https://platform.openai.com/docs/models)。
+Completion API 分为 Text Completion 和 Chat Completion。其中，Text Completion 对应较早期的 GPT 模型，也称为 instructGPT，针对指令进行了微调。最新的 Chat Completion 则对应于 `gpt-3.5-turbo` 模型，即广为人知的 ChatGPT 模型。尽管 OpenAI 将 `text-davinci-003` 划归至 GPT3.5 系列，但 `gpt-3.5-turbo` 的性能与性价比被公认为最佳。如果你想了解各种模型之间的差异、 GPT-4 、 GPT 模型的发布论文或者更多 OpenAI 模型，可以参考 [Models](https://platform.openai.com/docs/models)。
+
+> 还有一种 Code Completion ，对应于 GitHub Copilot 底层使用的 Codex 模型（同样基于 GPT3，但针对程序设计语言进行微调），但是 Codex 服务即将被取消，因此不再赘述。
 
 使用 Completion API 非常直观且简单，强烈建议你去 [OpenAI Playground](https://platform.openai.com/playground?mode=complete) 亲自尝试。对于 Text Completion ，右边可能有一些参数，你暂时保持默认即可。在 Mode 中切换为 Chat 就可以调用 Chat Completion ，尽管它们之间存在一定差异，但实际上，Chat API 更为简便易用。
 
@@ -134,9 +142,11 @@ Fine-tunning 是 Text Completion 和 Chat Completion 的不同之处。它提供
 直接使用 OpenAI API 接入 GPT 模型是最简单也是最快的方式，但当人们反复重写同样功能的代码时，软件工程就会出手。目前市面上有两款语言模型应用框架，他们功能各有不同，但都提供了 prompt templating, chain, memory 等类型的功能：
 
 - [Microsoft / Semantic Kernel](https://github.com/microsoft/semantic-kernel)
+  微软绝对是接入 OpenAI 最快也是最早的大型公司，他们发布的“语义内核”是非常具有权威性的概念。
 - [LangChain](https://github.com/hwchase17/langchain)
-
-微软绝对是接入 OpenAI 最快也是最早的大型公司，他们发布的“语义内核”是非常具有权威性的概念。而 LangChain 作为类似的开源项目，已经有[近千应用](https://github.com/hwchase17/langchain/network/dependents) 的用户群体。
+  而 LangChain 作为类似的开源项目，已经有[近千应用](https://github.com/hwchase17/langchain/network/dependents) 的用户群体。
+- [NVIDIA Generative AI for Enterprises](https://www.nvidia.com/en-us/ai-data-science/generative-ai/)
+  任何现代 AI 都离不开 NVIDIA 的计算芯片，他们同样在最近（2023-3-21）宣布了他们的 LLM 云服务，相比于上面两款开源的解决方案，NVIDIA 推出企业级的 SaaS 服务，如果预算丰富，使用它一定可以得到更好的效果。除了文本生成以外，NVIDIA 还提供蛋白质大模型服务、视觉内容、端到端大模型框架，具体内容可以参考[这篇文章 NVIDIA 的 LLM 介绍文章](https://www.nvidia.com/en-us/glossary/data-science/large-language-models/)、[NVIDIA NeMo Service 官网](https://www.nvidia.com/en-us/gpu-cloud/nemo-llm-service/)、[NVIDIA 生成式 AI 云服务发布文章](https://nvidianews.nvidia.com/news/nvidia-brings-generative-ai-to-worlds-enterprises-with-cloud-services-for-creating-large-language-and-visual-models)。在这一天他们还发布了 AI 工作站、AI 计算云服务，但是这些服务更像是为语言模型开发而非应用提供的。
 
 ### 开源大语言模型
 
@@ -146,6 +156,8 @@ LLaMA 更像是早期的 GPT 模型，这类模型是大语言模型最原本的
 
 在社区高手的发酵下，诞生了一系列方便部署的开源项目，接下来在此对这些项目进行总结和介绍。
 
+- [nichtdax / awesome-totally-open-chatgpt](https://github.com/nichtdax/awesome-totally-open-chatgpt)
+  一个介绍开源 ChatGPT 替代品的文档仓库，对开源仓库的范围进行了合理的总结和分类，包括下面大部分文字生成模型。如果你想要部署一个 ChatGPT 的替代品，可以从这里开始。
 - [ggerganov / llama.cpp](https://github.com/ggerganov/llama.cpp)
   作者 Georgi Gerganov 实现的推理方法，可以把 LLaMA、Alpaca 高效地运行在 CPU 上，甚至有人用手机运行了 LLaMA 模型。
 - [THUDM / ChatGLM-6B](https://github.com/THUDM/ChatGLM-6B)
