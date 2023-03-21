@@ -28,13 +28,13 @@ export default function Datetime({ datetime, size = "sm", className }: Props) {
 const FormattedDatetime = ({ datetime }: { datetime: string | Date }) => {
   const myDatetime = new Date(datetime);
 
-  const date = myDatetime.toLocaleDateString([], {
+  const date = myDatetime.toLocaleDateString("zh-Hans-CN", {
     year: "numeric",
     month: "long",
     day: "numeric",
   });
 
-  const time = myDatetime.toLocaleTimeString([], {
+  const time = myDatetime.toLocaleTimeString("zh-Hans-CN", {
     hour: "2-digit",
     minute: "2-digit",
   });
