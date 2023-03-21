@@ -1,6 +1,6 @@
 ---
 author: Nico
-pubDatetime: 2023-03-20T00:00:00.000Z
+pubDatetime: 2023-03-21T17:50:52.836Z
 title: 语言模型应用的高级工程实践
 postSlug: advanced-engineering-practices-of-language-model-applications
 featured: true
@@ -17,8 +17,6 @@ description: 本文简洁明了地介绍 OpenAI API 的基本使用方法，重�
 自 OpenAI 发布 ChatGPT 以来，随着 text-davinci-003、gpt-3.5-turbo 等先进模型的逐步推出，大语言模型在工程应用领域呈现出百花齐放的景象。本文将首先简洁明了地介绍 OpenAI API 的基本使用方法，随后重点探讨在撰写本文时期，一些颇具前瞻性的高级工程实践。此外，还将提供若干实用的参考案例，同时概述当下开源大语言模型的发展状况。
 
 > _本文含有使用大语言模型生成的文本。_
->
-> 本文最后更新日期：2023 年 3 月 22 日 1 时 41 分
 
 ## OpenAI API 简介
 
@@ -166,6 +164,8 @@ LLaMA 更像是早期的 GPT 模型，这类模型是大语言模型最原本的
   同样基于 Georgi Gerganov 的方法，推理 OpenAI Whisper 模型。
 - [tloen / alpaca-lora](https://github.com/tloen/alpaca-lora)
   使用 [LoRA](https://github.com/microsoft/LoRA) 技术同样以 instruct 风格 fine tune 的 Alpaca 模型。
+- [bigscience-workshop / petals](https://github.com/bigscience-workshop/petals)
+  BigScience 提供了一种像 BT 下载一样合作运行大语言模型的方法，可以让家用电脑也能运行 100B+ 参数的模型。由于在自建大模型这个场景下，推理实际上对计算资源的占用率并不高，这样的方法可以提高计算资源的利用率，如果经过良好设计，实际上是一种非常高效的方法。BigScience 声明这样调用可以比将任务外包给云端完成的方式快 10 倍，并且可以对模型进行 fine tune。
 
 如果你有更好的开源大语言模型，欢迎通过邮件与我分享。
 
