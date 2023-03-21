@@ -18,7 +18,7 @@ description: 本文简洁明了地介绍 OpenAI API 的基本使用方法，重�
 
 > _本文含有使用大语言模型生成的文本。_
 >
-> 本文最后更新日期：2023 年 3 月 22 日 1 时 40 分
+> 本文最后更新日期：2023 年 3 月 22 日 1 时 41 分
 
 ## OpenAI API 简介
 
@@ -192,6 +192,7 @@ LLaMA 更像是早期的 GPT 模型，这类模型是大语言模型最原本的
 这些都是比较庞大且复杂的话题，如果以后有机会，我会单独写一篇文章来讨论这些问题，目前，我推荐阅读以下资料：
 
 - [OpenAI CEO warns that GPT-4 could be misused for nefarious purposes](https://www.theregister.com/2023/03/20/openai_warns_that_gpt4_could/)
+- [Google Search's guidance about AI-generated content](https://developers.google.com/search/blog/2023/02/google-search-and-ai-content)
 - [Nearly Half of Firms Are Drafting Policies on ChatGPT Use](https://www.bloomberg.com/news/articles/2023-03-20/using-chatgpt-at-work-nearly-half-of-firms-are-drafting-policies-on-its-use)
 - [Language models might be able to self-correct biases—if you ask them](https://www.technologyreview.com/2023/03/20/1070067/language-models-may-be-able-to-self-correct-biases-if-you-ask-them-to/)
 - [GPT-4 论文竟有隐藏线索：GPT-5 或完成训练、OpenAI 两年内接近 AGI](https://www.qbitai.com/2023/03/42885.html)
