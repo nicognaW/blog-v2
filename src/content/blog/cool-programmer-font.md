@@ -12,7 +12,7 @@ ogImage: ""
 description: 本文介绍了一款超酷的编程字体——Victor Mono，它能把代码中的关键字和注释变成手写体，看起来非常酷炫！并介绍了在 Jetbrains 和 Visual Studio Code 中的配置方法。
 ---
 
-# Victor Mono——最酷的编程字体！原理与配置！
+## 目录
 
 ## [Victor Mono](https://rubjo.github.io/victor-mono/)
 
