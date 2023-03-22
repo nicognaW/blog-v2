@@ -12,15 +12,32 @@
   src: url("/assets/fonts/TiejiliSC-Regular.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: "Soehne-Sans";
+  src: url("/assets/fonts/soehne-halbfett.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Soehne-Mono";
+  src: url("/assets/fonts/soehne-buch.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Signifier";
+  src: url("/assets/fonts/signifier-light.woff2") format("woff2");
+}
+
 @layer base {
   #website-logo {
     position: absolute;
     top: 0;
   }
-  h1,
+  h1 {
+    @apply font-serif;
+  }
   h2,
   h3 {
-    font-family: TiejiliSC, IBM Plex Mono, LXGWWenKaiMono, monospace;
+    @apply font-sans;
   }
   :root,
   html[data-theme="light"] {

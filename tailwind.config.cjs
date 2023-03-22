@@ -58,7 +58,9 @@ module.exports = {
       transparent: "transparent",
     },
     fontFamily: {
-      mono: ["IBM Plex Mono", "LXGWWenKaiMono", "TiejiliSC", "monospace"],
+      sans: ["Soehne", "LXGWWenKaiMono", "TiejiliSC", "system-ui", "-apple-system", "Helvetica Neue", "Arial", "sans-serif"],
+      serif: ["Signifier", "TiejiliSC", "LXGWWenKaiMono", "ui-serif", "Georgia", "Cambria", "Times New Roman", "Times", "serif"],
+      mono: ["Soehne Mono Buch", "LXGWWenKaiMono", "TiejiliSC", "Courier", "monospace"],
     },
     // },
   },
