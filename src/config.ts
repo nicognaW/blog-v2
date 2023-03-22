@@ -33,7 +33,7 @@ export const SOCIALS: SocialObjects = [
   {
     name: "BiliBili",
     href: "mailto:nicognaw@outlook.com",
-    linkTitle: `Send an email to ${SITE.title}`,
+    linkTitle: `Follow ${SITE.title} on BiliBili`,
     active: true,
   },
 ];
