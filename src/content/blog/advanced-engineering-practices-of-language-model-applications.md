@@ -203,6 +203,8 @@ GitHub Copilot 是生成式语言模型 AI 对软件工程师们的第一次重�
   Codeium 是一款将人工智能整合至编程过程的高效开发工具，支持 40 多种编程语言和 20 多个编辑器，通过智能搜索、代码生成等 AI 功能，助力开发者与团队提高编码效率和产品交付速度。
 - [bloop](https://bloop.ai/)
   利用 GPT-4 智能理解代码库，并实现高效语义代码搜索
+- [zapier](https://zapier.com/)
+  源自 [Hacker News](https://news.ycombinator.com/item?id=4138415) 的初创公司，率先[将语义编程引入](https://news.ycombinator.com/item?id=35263542)了 IFTTT 系统中。
 
 欢迎补充。
 
@@ -239,3 +241,20 @@ AI 显然会改变软件工程师的工作方式，但距离替代软件工程�
 - [GPT-4 论文竟有隐藏线索：GPT-5 或完成训练、OpenAI 两年内接近 AGI](https://www.qbitai.com/2023/03/42885.html)
 - [The End of Front-End Development](https://www.joshwcomeau.com/blog/the-end-of-frontend-development/)
 - [Mozilla.ai announcement.](https://blog.mozilla.org/mozilla/introducing-mozilla-ai-investing-in-trustworthy-ai/)
+- [These new tools let you see for yourself how biased AI image models are](https://www.technologyreview.com/2023/03/22/1070167/these-news-tool-let-you-see-for-yourself-how-biased-ai-image-models-are/)
+
+#### 隐私数据训练与联邦学习
+
+联邦学习可以解决许多 ML 项目面临的数据保护和隐私问题，比如数据敏感性、组织隔离、用户隐私等。[Flower](https://flower.dev/) 是一个开源框架，用于在分布式数据上训练 AI 模型，其使用联邦学习方法，将模型移动到数据而不是将数据移动到模型，以实现监管合规性（例如 HIPAA）和其他无法实现的 ML 用例。Flower 使你可以在许多用户设备或“数据孤立”（独立的数据源）中分布的数据上训练 ML 模型，而不必移动数据，这种方法称为联邦学习。Flower 支持 PyTorch、TensorFlow、JAX、Hugging Face、Fastai、Weights＆Biases 等 ML 项目中的所有其他工具，适用于个人工作站、Google Colab、计算集群、公共云实例或私人硬件等各种环境。此外，Flower 提供一个教程，展示了如何使用该框架。
+
+联邦学习还可以解决很多 ML 项目中的问题，如：
+
+- 生成 AI：很多情况需要敏感数据，用户或组织不愿意上传到云端，但使用联邦学习可以从个人设备中使用敏感数据，同时保护用户隐私。
+- 医疗保健：可以比医生更好地训练癌症检测模型，但没有任何单个组织拥有足够的数据。
+- 金融：个人银行面临数据法规的约束，无法培训良好的模型，因此金融欺诈防范变得更加困难。
+- 自动驾驶：单个汽车制造商无法收集涵盖所有边缘情况的数据。
+- 个人计算：用户不想让某些数据存储在云中，因此使用联邦方法开启了从个人设备使用敏感数据的大门。
+
+Flower 是一种优秀的 AI 技术，其基于联邦学习方法，能够训练分布式且敏感的数据，使得模型不必移动数据，解决了许多 ML 项目面临的数据保护和隐私问题。
+
+> _以上内容由 ChatGPT 生成_
