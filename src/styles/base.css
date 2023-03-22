@@ -28,6 +28,13 @@
 }
 
 @layer base {
+  .anchor-icon {
+    display: inline-block;
+    width: 0.75em;
+    border: none;
+    vertical-align: middle;
+    margin: 0 0 0.5em 0 !important;
+  }
   #website-logo {
     position: absolute;
     top: 0;

@@ -5,6 +5,7 @@ import remarkToc from "remark-toc";
 import remarkCollapse from "remark-collapse";
 import sitemap from "@astrojs/sitemap";
 import { SITE } from "./src/config";
+import remarkAnchorIcon from "./src/utils/anchorIcon";
 
 // https://astro.build/config
 export default defineConfig({
@@ -20,11 +21,18 @@ export default defineConfig({
   ],
   markdown: {
     remarkPlugins: [
-      remarkToc,
+      remarkAnchorIcon,
+      [
+        remarkToc,
+        {
+          heading: "目录",
+        },
+      ],
       [
         remarkCollapse,
         {
-          test: "Table of contents",
+          test: "目录",
+          summary: "折叠目录",
         },
       ],
     ],
