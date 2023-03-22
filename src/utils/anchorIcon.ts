@@ -23,7 +23,10 @@ export default function remarkAnchorIcon() {
         typeof node.children[0].value !== "string"
       )
         return;
-      const title = node.children[0].value.replace(/ /g, "-").toLowerCase();
+      const title = node.children[0].value
+        .toLowerCase()
+        .replace(/ /g, "-")
+        .replace(/[^\u4e00-\u9fa5a-z0-9-]/g, "");
       if (title === "目录") return;
       node.children = [createAnchor(title), ...node.children];
     });
