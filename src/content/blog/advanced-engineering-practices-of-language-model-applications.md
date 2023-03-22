@@ -144,7 +144,7 @@ Fine-tunning 是 Text Completion 和 Chat Completion 的不同之处。它提供
 - [Microsoft / Semantic Kernel](https://github.com/microsoft/semantic-kernel)
   微软绝对是接入 OpenAI 最快也是最早的大型公司，他们发布的“语义内核”是非常具有权威性的概念。
 - [LangChain](https://github.com/hwchase17/langchain)
-  而 LangChain 作为类似的开源项目，已经有[近千应用](https://github.com/hwchase17/langchain/network/dependents) 的用户群体。
+  而 LangChain 作为类似的开源项目，已经有[近千应用](https://github.com/hwchase17/langchain/network/dependents) 的用户群体。甚至连[微软的最新研究](https://github.com/microsoft/MM-REACT)，也用上了 LangChain，毫无疑问，LangChain 是目前最具有实际应用价值的语言模型应用框架之一。
 - [NVIDIA Generative AI for Enterprises](https://www.nvidia.com/en-us/ai-data-science/generative-ai/)
   任何现代 AI 都离不开 NVIDIA 的计算芯片，他们同样在最近（2023-3-21）宣布了他们的 LLM 云服务，相比于上面两款开源的解决方案，NVIDIA 推出企业级的 SaaS 服务，如果预算丰富，使用它一定可以得到更好的效果。除了文本生成以外，NVIDIA 还提供蛋白质大模型服务、视觉内容、端到端大模型框架，具体内容可以参考[这篇文章 NVIDIA 的 LLM 介绍文章](https://www.nvidia.com/en-us/glossary/data-science/large-language-models/)、[NVIDIA NeMo Service 官网](https://www.nvidia.com/en-us/gpu-cloud/nemo-llm-service/)、[NVIDIA 生成式 AI 云服务发布文章](https://nvidianews.nvidia.com/news/nvidia-brings-generative-ai-to-worlds-enterprises-with-cloud-services-for-creating-large-language-and-visual-models)。在这一天他们还发布了 AI 工作站、AI 计算云服务，但是这些服务更像是为语言模型开发而非应用提供的。
 
@@ -190,6 +190,10 @@ LLaMA 更像是早期的 GPT 模型，这类模型是大语言模型最原本的
 假设，AI 真的为人类带来了产业升级，也许我们可以幻想在不远的将来，领域专家们将像参与到软件开发一样参与到 AI 的研发中，产生高质量的数据用来对 AI 进行调参。未来的 AI 工程就像当今的软件工程一样繁荣发达，专家们研发出可以让普通开发者简单快速上手的 AI 框架，甚至可以让行外的普通人花短时间培训就可以进入 AI 行业，到这个时候，AI 专业将成为继土木工程、计算机科学之后的下一个银弹。
 
 ### AI 与软件工程师
+
+GitHub Copilot 是生成式语言模型 AI 对软件工程师们的第一次重击，它已经服务了开发者们一年多的时间。最近，GitHub 又推出了更强大的 [Copilot X](https://githubnext.com/projects/copilot-for-docs)
+
+> Copilot 这个词在微软内部似乎已经成为了生成式大语言模型应用的代名词。
 
 已经有许多专注于开发软件工具的 AI 初创企业纷纷涌现。它们包括：
 
