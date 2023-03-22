@@ -1,6 +1,6 @@
 ---
 author: Nico
-pubDatetime: 2023-03-21T17:50:52.836Z
+pubDatetime: 2023-03-22T14:20:22.253Z
 title: 语言模型应用的高级工程实践
 postSlug: advanced-engineering-practices-of-language-model-applications
 featured: true
@@ -14,9 +14,11 @@ description: 本文简洁明了地介绍 OpenAI API 的基本使用方法，重�
 
 # 语言模型的高级工程实践
 
-自 OpenAI 发布 ChatGPT 以来，随着 text-davinci-003、gpt-3.5-turbo 等先进模型的逐步推出，大语言模型在工程应用领域呈现出百花齐放的景象。本文将首先简洁明了地介绍 OpenAI API 的基本使用方法，随后重点探讨在撰写本文时期，一些颇具前瞻性的高级工程实践。此外，还将提供若干实用的参考案例，同时概述当下开源大语言模型的发展状况。
-
 > _本文含有使用大语言模型生成的文本。_
+>
+> **本文将持续更新（通常在北京时间每日晚上 10 点左右）**
+
+自 OpenAI 发布 ChatGPT 以来，随着 text-davinci-003、gpt-3.5-turbo 等先进模型的逐步推出，大语言模型在工程应用领域呈现出百花齐放的景象。本文将首先简洁明了地介绍 OpenAI API 的基本使用方法，随后重点探讨在撰写本文时期，一些颇具前瞻性的高级工程实践。此外，还将提供若干实用的参考案例，同时概述当下开源大语言模型的发展状况。
 
 ## OpenAI API 简介
 
@@ -154,18 +156,22 @@ LLaMA 更像是早期的 GPT 模型，这类模型是大语言模型最原本的
 
 在社区高手的发酵下，诞生了一系列方便部署的开源项目，接下来在此对这些项目进行总结和介绍。
 
-- [nichtdax / awesome-totally-open-chatgpt](https://github.com/nichtdax/awesome-totally-open-chatgpt)
-  一个介绍开源 ChatGPT 替代品的文档仓库，对开源仓库的范围进行了合理的总结和分类，包括下面大部分文字生成模型。如果你想要部署一个 ChatGPT 的替代品，可以从这里开始。
 - [ggerganov / llama.cpp](https://github.com/ggerganov/llama.cpp)
   作者 Georgi Gerganov 实现的推理方法，可以把 LLaMA、Alpaca 高效地运行在 CPU 上，甚至有人用手机运行了 LLaMA 模型。
 - [THUDM / ChatGLM-6B](https://github.com/THUDM/ChatGLM-6B)
   中文开源大语言模型的唯一选择，由清华大学唐杰教授团队开发，效果惊人。
+- [tloen / alpaca-lora](https://github.com/tloen/alpaca-lora)
+  使用 [LoRA](https://github.com/microsoft/LoRA) 技术同样以 instruct 风格 fine tune 的 Alpaca 模型，有一款 [UI](https://github.com/lxe/simple-llama-finetuner) 可以更方便的使用这个仓库。
+- [nichtdax / awesome-totally-open-chatgpt](https://github.com/nichtdax/awesome-totally-open-chatgpt)
+  一个介绍开源 ChatGPT 替代品的文档仓库，对开源仓库的范围进行了合理的总结和分类，包括了上面介绍的三款模型模型。如果你想要部署一个 ChatGPT 的替代品，可以从这里开始。
+- [LianjiaTech / BELLE](https://github.com/LianjiaTech/BELLE)
+  链家 / 贝壳找房开源的基于 alpaca 的中文模型。
 - [Const-me / Whisper](https://github.com/Const-me/Whisper)
   同样基于 Georgi Gerganov 的方法，推理 OpenAI Whisper 模型。
-- [tloen / alpaca-lora](https://github.com/tloen/alpaca-lora)
-  使用 [LoRA](https://github.com/microsoft/LoRA) 技术同样以 instruct 风格 fine tune 的 Alpaca 模型。
 - [bigscience-workshop / petals](https://github.com/bigscience-workshop/petals)
   BigScience 提供了一种像 BT 下载一样合作运行大语言模型的方法，可以让家用电脑也能运行 100B+ 参数的模型。由于在自建大模型这个场景下，推理实际上对计算资源的占用率并不高，这样的方法可以提高计算资源的利用率，如果经过良好设计，实际上是一种非常高效的方法。BigScience 声明这样调用可以比将任务外包给云端完成的方式快 10 倍，并且可以对模型进行 fine tune。
+- [Alpaca-7B Truss](https://github.com/basetenlabs/alpaca-7b-truss)
+  Alpaca-7B 的 Truss 实现，Truss 是一个用于开发和部署机器学习模型的开源模型服务框架，根据他们提供的[在线 demo](https://chatllama.baseten.co/)，效果很棒。
 
 如果你有更好的开源大语言模型，欢迎通过邮件与我分享。
 
@@ -183,6 +189,37 @@ LLaMA 更像是早期的 GPT 模型，这类模型是大语言模型最原本的
 
 假设，AI 真的为人类带来了产业升级，也许我们可以幻想在不远的将来，领域专家们将像参与到软件开发一样参与到 AI 的研发中，产生高质量的数据用来对 AI 进行调参。未来的 AI 工程就像当今的软件工程一样繁荣发达，专家们研发出可以让普通开发者简单快速上手的 AI 框架，甚至可以让行外的普通人花短时间培训就可以进入 AI 行业，到这个时候，AI 专业将成为继土木工程、计算机科学之后的下一个银弹。
 
+### AI 与软件工程师
+
+已经有许多专注于开发软件工具的 AI 初创企业纷纷涌现。它们包括：
+
+- [Watermelon](https://www.watermelontools.com/)
+  通过高亮显示代码块并利用 Git、通讯系统和工单系统找到重点信息
+- [codeium](https://codeium.com/)
+  Codeium 是一款将人工智能整合至编程过程的高效开发工具，支持 40 多种编程语言和 20 多个编辑器，通过智能搜索、代码生成等 AI 功能，助力开发者与团队提高编码效率和产品交付速度。
+- [bloop](https://bloop.ai/)
+  利用 GPT-4 智能理解代码库，并实现高效语义代码搜索
+
+欢迎补充。
+
+AI 显然会改变软件工程师的工作方式，但距离替代软件工程师，还远远不够，在文章[为什么 AI 无法取代软件工程师](https://softwarecomplexity.com/why-ai-wont-replace-software-engineers)中，作者认为，
+
+> GPT-4 根据前面提到的文章生成的总结：
+>
+> 虽然 AI 工具如 co-pilot 能提高软件工程效率，但软件工程师仍不可或缺。他们不仅负责编写代码，还需理解复杂系统、管理复杂性、调试代码及维护任务。软件工程师在编写代码、维护质量与交付功能之间寻求平衡，确保系统质量。因此，尽管 AI 技术在某程度上辅助工程师，但优秀的软件工程师和领导者始终是关键。
+
+这篇文章在 [Hacker News](https://news.ycombinator.com/item?id=35247239) 上引起了共鸣和讨论，下面将提供 AIGC 总结，但我强烈建议阅读原文，HN 上的大胡子们提供了很多有价值的观点。
+
+> GPT-4 根据 Hacker News 中的讨论生成的总结：
+>
+> 尽管人工智能工具如 ChatGPT 在提高编码效率方面具有潜力，但它无法完全取代软件工程师。ChatGPT 的代码不总是正确且有时不符合要求，且通常调用已知解决方案而非创新方案。虽然它在提供代码模板、帮助文档和搜索方面有所帮助，但在实际编写和部署生产代码方面仍有待完善。人们对人工智能在编码中的作用看法不一，需注意 AI 可能引入的复杂性。总之，软件工程师在分析软件复杂性方面仍是不可或缺的。
+
+### AI 与教育
+
+对许多人来说，他们可能并未意识到 AI 在他们的教育生涯中扮演了重要角色。事实上，搜索引擎就是现代 AI 的一个典型应用，而绝大多数大学生在学习过程中都使用过搜索引擎。除此之外，还有其他 AI 技术，例如机器翻译和语音合成，在我的英语学习中发挥了巨大作用。自从 Google 还在中国市场时，我就开始利用 Google 翻译来翻译英文电脑游戏和英文游戏网站，这些经历对我英语的提高帮助非常大。
+
+我想强调的是，AI 技术通过各种互联网应用已经渗透到我们的日常生活中。因此，我们不应该因为大型语言模型的出现而忽略 AI 在过去几年的发展。
+
 ### 伦理、法律、道德、监管与安全
 
 从 AI 这个概念诞生以来，从未像今天一样引起了人们的广泛关注和讨论。AI 不仅是第四次产业革命的核心，也是推动社会进步和变革的重要力量。但是，AI 也给伦理道德规范和社会治理带来了挑战，比如数据隐私、算法歧视、责任归属、人机关系等问题。因此，建立和完善 AI 的伦理规范和治理机制，保障 AI 的安全可控和可信赖，是当务之急。
@@ -197,3 +234,4 @@ LLaMA 更像是早期的 GPT 模型，这类模型是大语言模型最原本的
 - [Language models might be able to self-correct biases—if you ask them](https://www.technologyreview.com/2023/03/20/1070067/language-models-may-be-able-to-self-correct-biases-if-you-ask-them-to/)
 - [GPT-4 论文竟有隐藏线索：GPT-5 或完成训练、OpenAI 两年内接近 AGI](https://www.qbitai.com/2023/03/42885.html)
 - [The End of Front-End Development](https://www.joshwcomeau.com/blog/the-end-of-frontend-development/)
+- [Mozilla.ai announcement.](https://blog.mozilla.org/mozilla/introducing-mozilla-ai-investing-in-trustworthy-ai/)
