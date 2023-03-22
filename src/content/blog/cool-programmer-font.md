@@ -16,7 +16,7 @@ description: 本文介绍了一款超酷的编程字体——Victor Mono，它�
 
 ## [Victor Mono](https://rubjo.github.io/victor-mono/)
 
-![117447088-53e03300-af3d-11eb-84e2-df1713e77019[1].png](https://cdn.hashnode.com/res/hashnode/image/upload/v1664295042981/5qYHngIWc.png align="left")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1664295042981/5qYHngIWc.png)
 
 [Victor Mono](https://rubjo.github.io/victor-mono/) 是一款超酷的编程字体，配置这款字体后，代码里的关键字、注释有一些会变成**_手写体_**，看起来非常的酷！
 
@@ -28,7 +28,7 @@ description: 本文介绍了一款超酷的编程字体——Victor Mono，它�
 
 实际上这些变成手写体的字，并不是真的把他们换成了另一个手写字体，本质上是把他们变成了 `italic` 样式，而字体中所有的 `italic` 字体，都是手写体。
 
-![image.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1664295401609/h6MpvMV3U.png align="left")
+![image.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1664295401609/h6MpvMV3U.png)
 
 ## 安装与配置
 
@@ -38,11 +38,11 @@ description: 本文介绍了一款超酷的编程字体——Victor Mono，它�
 
 对于 Intellij Idea 以及其他 Jetbrains IDE，首先在 `Editor > Font` 内选择字体
 
-![image.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1664295567627/MY9fn-7Q2.png align="left")
+![image.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1664295567627/MY9fn-7Q2.png)
 
 之后在配置 `Editor > Color Scheme` 就可以啦，这个 Color Scheme 配置项简单易懂，相信你玩一玩就可以上手！
 
-![image.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1664295645787/N6hOgD60E.png align="left")
+![image.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1664295645787/N6hOgD60E.png)
 
 ### Visual Studio Code
 
