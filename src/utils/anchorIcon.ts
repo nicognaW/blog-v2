@@ -15,7 +15,7 @@ export default function remarkAnchorIcon() {
   return (tree: any) => {
     visit(tree, "heading", node => {
       if (!node.depth) return;
-      if (node.depth !== 2) return;
+      if (node.depth !== 2 && node.depth !== 3) return;
       if (
         !node.children ||
         !node.children.length ||
