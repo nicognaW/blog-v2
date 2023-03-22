@@ -16,9 +16,14 @@ export default function remarkAnchorIcon() {
     visit(tree, "heading", node => {
       if (!node.depth) return;
       if (node.depth !== 2) return;
-      if (!node.children || !node.children.length || !node.children[0].value)
+      if (
+        !node.children ||
+        !node.children.length ||
+        !node.children[0].value ||
+        typeof node.children[0].value !== "string"
+      )
         return;
-      const title = node.children[0].value;
+      const title = node.children[0].value.replace(/ /g, "-").toLowerCase();
       if (title === "目录") return;
       node.children = [createAnchor(title), ...node.children];
     });
