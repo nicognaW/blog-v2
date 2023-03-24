@@ -50,5 +50,8 @@ export default defineConfig({
     },
   },
   output: "server",
+  build: {
+    client: "./client",
+  },
   adapter: cloudflare(),
 });
