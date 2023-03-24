@@ -7,8 +7,6 @@ import sitemap from "@astrojs/sitemap";
 import { SITE } from "./src/config";
 import remarkAnchorIcon from "./src/utils/anchorIcon";
 
-import cloudflare from "@astrojs/cloudflare";
-
 // https://astro.build/config
 export default defineConfig({
   site: SITE.website,
@@ -49,9 +47,4 @@ export default defineConfig({
       exclude: ["@resvg/resvg-js"],
     },
   },
-  output: "server",
-  build: {
-    client: "./client",
-  },
-  adapter: cloudflare(),
 });
