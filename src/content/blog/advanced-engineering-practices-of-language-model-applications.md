@@ -1,6 +1,6 @@
 ---
 author: Nico
-pubDatetime: 2023-03-22T14:20:22.253Z
+pubDatetime: 2023-03-25T02:36:53.364Z
 title: 语言模型应用的高级工程实践
 postSlug: advanced-engineering-practices-of-language-model-applications
 featured: true
@@ -15,10 +15,8 @@ description: 本文简洁明了地介绍 OpenAI API 的基本使用方法，重�
 ## 目录
 
 > _本文含有使用大语言模型生成的文本。_
->
-> **本文将持续更新（通常在北京时间每日晚上 10 点左右）**
 
-自 OpenAI 发布 ChatGPT 以来，随着 text-davinci-003、gpt-3.5-turbo 等先进模型的逐步推出，大语言模型在工程应用领域呈现出百花齐放的景象。本文将首先简洁明了地介绍 OpenAI API 的基本使用方法，随后重点探讨在撰写本文时期，一些颇具前瞻性的高级工程实践。此外，还将提供若干实用的参考案例，同时概述当下开源大语言模型的发展状况。
+自 OpenAI 发布 ChatGPT 以来，随着 text-davinci-003、gpt-3.5-turbo 等先进模型的逐步推出，大语言模型在工程应用领域呈现出百花齐放的景象。本文将首先简洁明了地介绍 OpenAI API 的基本使用方法，随后列举一些在撰写本文时期，一些颇具前瞻性的工程化应用框架，以及分享相关的阅读内容。同时同步分析、概述当下开源大语言模型的发展状况。
 
 ## OpenAI API 简介
 
@@ -137,7 +135,7 @@ Fine-tunning 是 Text Completion 和 Chat Completion 的不同之处。它提供
 
 目前最实用的模型 `gpt-3.5-turbo` 是 Chat Completion 模型，所以并不适用于 fine-tuning。但鉴于同为 Text Completion，即将发布的 GPT-4 API 很可能会支持 fine-tuning，目前已经有一些应用，将 GPT-4 用于精确性要求极高的任务，例如 [Lume](https://www.lume-ai.com/) 将 GPT-4 模型用于转换数据格式。
 
-### 语言模型应用框架（WIP）
+### 语言模型应用框架
 
 直接使用 OpenAI API 接入 GPT 模型是最简单也是最快的方式，但当人们反复重写同样功能的代码时，软件工程就会出手。目前市面上有两款语言模型应用框架，他们功能各有不同，但都提供了 prompt templating, chain, memory 等类型的功能：
 
@@ -148,9 +146,28 @@ Fine-tunning 是 Text Completion 和 Chat Completion 的不同之处。它提供
 - [NVIDIA Generative AI for Enterprises](https://www.nvidia.com/en-us/ai-data-science/generative-ai/)
   任何现代 AI 都离不开 NVIDIA 的计算芯片，他们同样在最近（2023-3-21）宣布了他们的 LLM 云服务，相比于上面两款开源的解决方案，NVIDIA 推出企业级的 SaaS 服务，如果预算丰富，使用它一定可以得到更好的效果。除了文本生成以外，NVIDIA 还提供蛋白质大模型服务、视觉内容、端到端大模型框架，具体内容可以参考[这篇文章 NVIDIA 的 LLM 介绍文章](https://www.nvidia.com/en-us/glossary/data-science/large-language-models/)、[NVIDIA NeMo Service 官网](https://www.nvidia.com/en-us/gpu-cloud/nemo-llm-service/)、[NVIDIA 生成式 AI 云服务发布文章](https://nvidianews.nvidia.com/news/nvidia-brings-generative-ai-to-worlds-enterprises-with-cloud-services-for-creating-large-language-and-visual-models)。在这一天他们还发布了 AI 工作站、AI 计算云服务，但是这些服务更像是为语言模型开发而非应用提供的。
 
+最近，OpenAI 发布了 ChatGPT Plugins，社区评价它直接杀死了 LangChain，关于 plugins，[这篇文章](https://web.okjike.com/originalPost/641d6715d9519fa8bcea34d9)对它进行了一些分析，下面使用 ChatGPT 对文章进行总结：
+
+> ChatGPT plugins 是一种让 ChatGPT 可以与外部服务打交道的方式，而不是将其变成一个操作系统。它可以帮助用户访问已有的服务，如 KAYAK、Bing、Wolfram Alpha 等。插件系统并不需要用户自己编写插件，只需使用已有的插件即可。ChatGPT 会将用户的自然语言翻译成 API，与其他服务进行交互。该系统类似于 Google Assistant 的第三方服务接入方式。ChatGPT plugins 系统最大的创新点在于通过自然语言解决流量分发问题，即提供一种自然语言界面的流量分发机制。这种能力是商业化和设计生态系统的核心能力，也是产品经理所需的能力。OpenAI 的产品和市场能力也很强，可能是其发展为第四次工业革命的 Google 或 Apple 的原因之一。
+
+关于 ChatGPT Plugins 与 LangChain 等框架的对比与分析，推荐阅读[这篇文章](https://mp.weixin.qq.com/s/3coFhAdzr40tozn8f9Dc-w)。实际上这篇文章覆盖了本文的初衷，即介绍语言模型应用框架，但是由于它的内容更加详细，所以我就不再重复了。
+
 ### 开源大语言模型
 
 OpenAI 在早期就开源了 [GPT-2](https://github.com/openai/gpt-2) 模型与 [Whisper](https://github.com/openai/whisper) 模型，后者用于语音识别。尽管如此，最近几年 OpenAI 经常由于不够 Open 而被人讽刺和诟病，而在大语言模型领域，真正 Open 的却是投资元宇宙亏钱的 Meta。从早期的 [OPT](https://ai.facebook.com/blog/democratizing-access-to-large-scale-language-models-with-opt-175b/) 模型，到现在的 [LLaMA](https://ai.facebook.com/blog/large-language-model-llama-meta-ai/)，Meta 一直没有吝啬自己的研究成果，于是他们的模型，也是开源大语言模型中最为广泛应用与传播的。
+
+值得注意的是，LLaMA 在早期开源时，模型并非直接开源，而是像 OPT 模型的大参数版本一样需要通过申请才能下载，但社区泄露了模型文件并将下载地址公布，这导致 LLaMA 的所有版本被迫直接开源，Meta 已经开始积极使用 DCMA 打击 LLaMA 相关的代码仓库，这一系列事件可能导致 Meta 或者像是 Meta 这样的公司不再愿意开源 LLM 模型。
+
+> 由 ChatGPT 总结：
+>
+> 最近 Facebook 使用 DMCA（数字千年版权法）的方式打击 LLaMA（Language Model for Multilingual Analysis）的代码库，已经成功下架了 llama-dl，而这只是个开始。他们已经使几个 alpaca 的代码库下线，因此维护者们将他们的 huggingface 镜像私有化，以便“至少可以将其用作个人备份”。在短期内，你应该准备 dalai（另一个 LLaMA 的代码库）被封禁，因为该项目的人气甚至还不到 llama-dl 的四分之一。尽管这类项目被发布到 Github 上后可能存在一段时间的滞后期，但很有可能在下周就会被下架。
+>
+> 目前已被 DMCA 的是：
+>
+> - 下载 llama 权重或微调权重的链接
+> - Web 托管代码，更具体地说，是包含这些模型的 huggingface 仓库。
+>
+> dalai 的创作者刚刚推出了一个分散的模型分发平台 GOAT，由 BitTorrent 和比特币提供支持，用于发布和下载 AI 模型。
 
 LLaMA 更像是早期的 GPT 模型，这类模型是大语言模型最原本的样子，它们的输出结果通常杂乱无章，对于人类来说实用价值第。但只要对这些模型进行一定程度的 fine tune，就可以实现像 GPT-3 (instructGPT) 或 ChatGPT 这样的效果。斯坦福大学就基于 LLaMA 模仿 GPT-3 针对 指令（Instruction）的 fine tune 过程，发布了 [Stanford Alpaca](https://github.com/tatsu-lab/stanford_alpaca)。此外，清华大学唐杰教授的团队，一直在进行语言模型的研究，它们的 [ChatGLM-6B](https://github.com/THUDM/ChatGLM-6B) 效果惊人，由于 Meta LLaMA 的训练数据中不包含简体中文，对于中文开源大模型也只有 GLM 模型具有先进的效果。
 
@@ -161,7 +178,7 @@ LLaMA 更像是早期的 GPT 模型，这类模型是大语言模型最原本的
 - [THUDM / ChatGLM-6B](https://github.com/THUDM/ChatGLM-6B)
   中文开源大语言模型的唯一选择，由清华大学唐杰教授团队开发，效果惊人。
 - [tloen / alpaca-lora](https://github.com/tloen/alpaca-lora)
-  使用 [LoRA](https://github.com/microsoft/LoRA) 技术同样以 instruct 风格 fine tune 的 Alpaca 模型，有一款 [UI](https://github.com/lxe/simple-llama-finetuner) 可以更方便的使用这个仓库。
+  使用 [LoRA](https://github.com/microsoft/LoRA) 技术同样以 instruct 风格 fine tune 的 Alpaca 模型，有一款 [UI](https://github.com/lxe/simple-llama-finetuner) 可以更方便的使用这个仓库。如果你想使用 Docker，可以参考[这个 fork 仓库](https://github.com/chris-alexiuk/alpaca-lora)
 - [nichtdax / awesome-totally-open-chatgpt](https://github.com/nichtdax/awesome-totally-open-chatgpt)
   一个介绍开源 ChatGPT 替代品的文档仓库，对开源仓库的范围进行了合理的总结和分类，包括了上面介绍的三款模型模型。如果你想要部署一个 ChatGPT 的替代品，可以从这里开始。
 - [LianjiaTech / BELLE](https://github.com/LianjiaTech/BELLE)
@@ -172,6 +189,8 @@ LLaMA 更像是早期的 GPT 模型，这类模型是大语言模型最原本的
   BigScience 提供了一种像 BT 下载一样合作运行大语言模型的方法，可以让家用电脑也能运行 100B+ 参数的模型。由于在自建大模型这个场景下，推理实际上对计算资源的占用率并不高，这样的方法可以提高计算资源的利用率，如果经过良好设计，实际上是一种非常高效的方法。BigScience 声明这样调用可以比将任务外包给云端完成的方式快 10 倍，并且可以对模型进行 fine tune。
 - [Alpaca-7B Truss](https://github.com/basetenlabs/alpaca-7b-truss)
   Alpaca-7B 的 Truss 实现，Truss 是一个用于开发和部署机器学习模型的开源模型服务框架，根据他们提供的[在线 demo](https://chatllama.baseten.co/)，效果很棒。
+- [Databricks Dolly](https://www.databricks.com/blog/2023/03/24/hello-dolly-democratizing-magic-chatgpt-open-models.html)
+  大数据平台 Databricks 发布的开源大型语言模型，可以在 30 分钟内使用高质量的训练数据对其进行训练，从而展现出类似 ChatGPT 的指令跟随能力。Dolly 模型只有 60 亿参数，比 GPT-3 的 1750 亿参数小得多，且比 GPT-3 的建模时间早两年，但在指令跟随能力方面表现出惊人的效果。
 
 如果你有更好的开源大语言模型，欢迎通过邮件与我分享。
 
@@ -242,6 +261,7 @@ AI 显然会改变软件工程师的工作方式，但距离替代软件工程�
 - [The End of Front-End Development](https://www.joshwcomeau.com/blog/the-end-of-frontend-development/)
 - [Mozilla.ai announcement.](https://blog.mozilla.org/mozilla/introducing-mozilla-ai-investing-in-trustworthy-ai/)
 - [These new tools let you see for yourself how biased AI image models are](https://www.technologyreview.com/2023/03/22/1070167/these-news-tool-let-you-see-for-yourself-how-biased-ai-image-models-are/)
+- [Tell HN: We need to push the notion that only open-source LLMs can be “safe”](https://news.ycombinator.com/item?id=35288606)
 
 #### 隐私数据训练与联邦学习
 
