@@ -12,6 +12,16 @@ ogImage: ""
 description: 8 说了，看吧
 ---
 
+> 终于，AWS EKS在夏日黄昏唤醒，柳暗花明般欣慰；
+>
+> AWS Load Balancer，麻烦连连，似穿越繁复丛林的迷途。
+> 
+> 空荡的办公室，澎湃的音乐在角落起舞，洒下坚定的光芒；
+> 
+> 犹如万籁俱寂后的第一缕晨曦，带来未知的新开始。
+> 
+> 劳动之余，面对窗外炽热的夏日，内心的欢喜如微风中的清凉。
+
 现在时间大约是2023年7月31日的15:02，我正在尝试将一个应用部署到EKS。
 
 目前，我正在创建IAM角色，参考的是["为Kubernetes配置Amazon VPC CNI插件，使用IAM角色为服务账户"](https://docs.aws.amazon.com/eks/latest/userguide/cni-iam-role.html)。
