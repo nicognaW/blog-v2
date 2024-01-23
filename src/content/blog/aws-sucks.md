@@ -3,7 +3,7 @@ author: Nico
 pubDatetime: 2023-07-31T15:14:53.216Z
 title: AWS 与无尽地狱
 postSlug: aws-sucks
-featured: true
+featured: false
 draft: false
 tags:
   - Cloud
